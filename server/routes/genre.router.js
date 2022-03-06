@@ -4,6 +4,7 @@ const pool = require('../modules/pool')
 
 router.get('/:id', (req, res) => {
   let id = req.params.id;
+  // selects movie with unique id provided by client and returns object with all movie info + genres associated with the movie
   let queryText = `SELECT "movies"."id", "movies"."title", "movies"."poster", "movies"."description", array_agg("genres"."name") AS "movie_genres"
 
   FROM "movies" 
@@ -18,6 +19,7 @@ router.get('/:id', (req, res) => {
     .then((result) => {
       console.log('request for genres');
       
+      // sends as object to match redux state
       res.send(result.rows[0])
     })
     .catch((error) => {

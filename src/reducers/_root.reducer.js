@@ -10,8 +10,8 @@ const movies = (state = [], action) => {
     }
 }
 
-// Used to store current movie, which is assigned
-// when user clicks on 'learn more' button for a movie
+// Used to store current movie, which is grabbed as option from database
+// is assigned when user clicks on 'learn more' button for a movie
 const currentMovie = (state = {}, action) => {
     switch (action.type) {
         case 'SET_CURRENT_MOVIE':                        
