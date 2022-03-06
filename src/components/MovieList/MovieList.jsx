@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
 
+// IMPORT MOVIE ITEM COMPONENT
+import MovieItem from '../MovieItem/MovieItem';
+
 function MovieList() {
 
     const dispatch = useDispatch();
@@ -15,17 +18,14 @@ function MovieList() {
         <main>
             <h1>MovieList</h1>
             <section className="movies">
-                {movies.map(movie => {
-                    return (
-                        <div key={movie.id} >
-                            <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
-                        </div>
-                    );
-                })}
+                {movies.map(movie => 
+                    (<MovieItem
+                        key={movie.id}
+                        movie={movie}
+                    />)
+                )}
             </section>
         </main>
-
     );
 }
 
