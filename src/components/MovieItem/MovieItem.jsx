@@ -2,10 +2,14 @@
 import { useHistory } from 'react-router-dom';
 
 // import redux dependencies
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 // import Material UI dependencies
-import { Card, CardActions, ImageListItem, CardContent, Button, Typography } from '@mui/material';
+import { Card, CardActions, CardContent, Button, Typography,  } from '@mui/material';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+
+// import CSS
+import './MovieItem.css';
 
 const MovieItem = ({ movie }) => {
 
@@ -16,21 +20,20 @@ const MovieItem = ({ movie }) => {
     const history = useHistory();
 
     // click listener for whenever 'learn more' button is clicked
-        // dispatch is called to store current movie information in redux
+    // dispatch is called to store current movie information in redux
     const handleClick = () => {
         console.log('in handleClick');
 
-        dispatch({type: 'FETCH_CURRENT_MOVIE', payload: movie.id});
+        dispatch({ type: 'FETCH_CURRENT_MOVIE', payload: movie.id });
 
         history.push('/details');
     }
 
     return (
-        <Card sx={{ width: 275 }}>
+        <>
+            {/* <Card sx={{ width: 275 }}>
             <CardContent>
-                <ImageListItem>
                     <img src={movie.poster} alt={movie.title} />
-                </ImageListItem>
             </CardContent>
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                 {movie.title}
@@ -38,7 +41,19 @@ const MovieItem = ({ movie }) => {
             <CardActions>
                 <Button size="small" onClick={handleClick}>Learn More</Button>
             </CardActions>
-        </Card>
+        </Card> */}
+
+            <Card sx={{ width: 200 }} className="movieItemContainer">
+                <div className="imageContainer">
+                    <img src={movie.poster} alt={movie.title} />
+                </div>
+
+                <div className="titleContainer">
+                    <h1 className="titleHeader">{movie.title}</h1>
+                    <Button size="small" variant="contained" onClick={handleClick}>Learn More <ArrowRightAltIcon/></Button>
+                </div>
+            </Card>
+        </>
     );
 }
 
