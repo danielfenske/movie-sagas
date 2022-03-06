@@ -12,6 +12,7 @@ import { takeEvery } from 'redux-saga/effects';
 
 // IMPORT SAGA functions
 import fetchAllMovies from './sagas/fetchAllMovies.saga';
+import storeCurrentMovie from './sagas/storeCurrentMovie.saga';
 
 // IMPORT REDUCERS
 import rootReducer from './reducers/_root.reducer';
@@ -19,6 +20,7 @@ import rootReducer from './reducers/_root.reducer';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
+    yield takeEvery('CURRENT_MOVIE', storeCurrentMovie);
 }
 
 // Create sagaMiddleware
