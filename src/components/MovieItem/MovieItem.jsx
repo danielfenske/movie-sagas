@@ -22,7 +22,7 @@ const MovieItem = ({ movie }) => {
 
         dispatch({type: 'FETCH_CURRENT_MOVIE', payload: movie.id});
 
-        // history.push('/details');
+        history.push('/details');
     }
 
     return (
