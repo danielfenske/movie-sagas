@@ -7,9 +7,13 @@ import MovieItem from '../MovieItem/MovieItem';
 
 function MovieList() {
 
+    // initiate useDispatch as variable
     const dispatch = useDispatch();
+
+    // access movies list stored in redux
     const movies = useSelector(store => store.rootReducer.movies);
 
+    // grab movie list on initial page load
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
