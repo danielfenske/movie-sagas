@@ -1,17 +1,20 @@
 // import react, router-DOM dependencies
 import { useHistory } from 'react-router-dom';
-// import React, { useEffect } from 'react';
 
 // import redux dependencies 
-import {useSelector} from 'react-redux';
+import { useSelector} from 'react-redux';
 
 // import Material UI dependencies
 import { Card, CardActions, ImageListItem, CardContent, Button, Typography } from '@mui/material';
+
+// import Genre component
+import Genre from '../Genre/Genre';
 
 function Details() {
 
     // bring in currentMovie object to render on page
     const currentMovie = useSelector((store) => store.rootReducer.currentMovie);
+    const genres = currentMovie.movie_genres;
 
     // initiate useHistory as a variable
     const history = useHistory();
@@ -22,8 +25,6 @@ function Details() {
 
         history.push('/');
     }
-
-    console.log(currentMovie.movie_genres);
 
     return (
         <Card sx={{ width: 275 }}>
@@ -36,8 +37,17 @@ function Details() {
             <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                 {currentMovie.title}
                 {currentMovie.description}
-                
-                {JSON.stringify(currentMovie.movie_genres)}
+
+
+                {genres && genres.map((genre) => {
+                    return (
+                        <Genre
+                            key={genre}
+                            genre={genre}
+                        />
+                    );
+                })}
+
             </Typography>
             <CardActions>
                 <Button size="small" onClick={handleClick}>Return to Home</Button>

@@ -14,9 +14,7 @@ const movies = (state = [], action) => {
 // when user clicks on 'learn more' button for a movie
 const currentMovie = (state = {}, action) => {
     switch (action.type) {
-        case 'SET_CURRENT_MOVIE': 
-            console.log('action.payload', action.payload);
-                       
+        case 'SET_CURRENT_MOVIE':                        
             return action.payload;
         default: 
             return state;
