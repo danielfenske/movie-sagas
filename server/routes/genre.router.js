@@ -14,6 +14,7 @@ router.get('/:id', (req, res) => {
   
   pool.query(queryText, [id])
     .then((result) => {
+      console.log('request for genres');
       res.send(result.rows)
     })
     .catch((error) => {

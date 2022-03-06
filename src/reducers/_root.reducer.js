@@ -10,16 +10,8 @@ const movies = (state = [], action) => {
     }
 }
 
-// Used to store the movie genres
-const genres = (state = [], action) => {
-    switch (action.type) {
-        case 'SET_GENRES':
-            return action.payload;
-        default:
-            return state;
-    }
-}
-
+// Used to store current movie, which is assigned
+// when user clicks on 'learn more' button for a movie
 const currentMovie = (state = {}, action) => {
     switch (action.type) {
         case 'SET_CURRENT_MOVIE':            
@@ -29,6 +21,6 @@ const currentMovie = (state = {}, action) => {
     }
 }
 
-const rootReducer = combineReducers({movies, genres, currentMovie});
+const rootReducer = combineReducers({movies, currentMovie});
 
 export default rootReducer;
