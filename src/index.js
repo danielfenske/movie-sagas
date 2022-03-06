@@ -20,7 +20,7 @@ import rootReducer from './reducers/_root.reducer';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-    yield takeEvery('CURRENT_MOVIE', storeCurrentMovie);
+    yield takeEvery('FETCH_CURRENT_MOVIE', storeCurrentMovie);
 }
 
 // Create sagaMiddleware

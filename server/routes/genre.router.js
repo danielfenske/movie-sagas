@@ -4,14 +4,16 @@ const pool = require('../modules/pool')
 
 router.get('/:id', (req, res) => {
   let id = req.params.id;
-  let queryText = `SELECT "genres"."name"
+  let queryText = `SELECT "movies"."id", "movies"."title", "movies"."poster", "movies"."description", array_agg("genres"."name") AS "movie_genres"
 
-  FROM "genres"
-  JOIN "movies_genres" ON "genres"."id" = "movies_genres"."genre_id"
-  JOIN "movies" ON "genres"."id" = "movies_genres"."movie_id"
+  FROM "movies" 
+  JOIN "movies_genres" ON "movies"."id" = "movies_genres"."movie_id"
+  JOIN "genres" ON "genres"."id" = "movies_genres"."genre_id"
   
-  WHERE "movies"."id" = $1;`;
+  WHERE "movies"."id" = $1
   
+  GROUP BY "movies"."id"`;
+
   pool.query(queryText, [id])
     .then((result) => {
       console.log('request for genres');
