@@ -5,10 +5,13 @@ import './App.css';
 import MovieList from '../MovieList/MovieList';
 import Details from '../Details/Details';
 
+// import Material UI components
+import TheatersIcon from '@mui/icons-material/Theaters';
+
 function App() {
   return (
     <div className="App">
-      <h1>The Movies Saga!</h1>
+      <header><TheatersIcon fontSize="large" className="movieIcon"/><h1 className="appTitle">Movie Library</h1></header>
       <Router>        
         <Route path="/" exact>
           <MovieList />
