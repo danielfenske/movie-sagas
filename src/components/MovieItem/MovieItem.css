@@ -1,0 +1,40 @@
+.movieItemContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.imageContainer img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+
+    width: 100%;
+    height: 125px;
+    background-color: #eceff1;
+}
+
+.titleContainer Button, .titleContainer h1 {
+    margin-left: 20px;
+}
+
+.titleHeader {
+    font-size: 1.3rem;
+}
+  

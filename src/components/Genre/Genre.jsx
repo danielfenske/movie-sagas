@@ -1,6 +1,11 @@
-function Genre({genre}) {
+// import CSS
+import './Genre.css';
+
+function Genre({ genre }) {
     return (
-        <p>{genre}</p>
+        <div className="genreContainer">
+            <p>{genre}</p>
+        </div>
     )
 }
 

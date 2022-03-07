@@ -1,0 +1,42 @@
+.movieDetailsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  flex: 1;
+}
+
+.detailsImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailsImageContainer img {
+  width: 350px;
+  height: 520px;
+  object-fit: cover;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 520px;
+}
+
+.detailsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.detailsGenresContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
