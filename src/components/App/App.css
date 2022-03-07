@@ -4,5 +4,12 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #d3dadf;
+}
+
+h1, p {
+  color: #37474f;
 }
