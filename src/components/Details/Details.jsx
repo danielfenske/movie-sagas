@@ -32,33 +32,6 @@ function Details() {
 
     return (
         <>
-            {/* // <Card sx={{ width: 275 }}>
-        //     <CardContent>
-        //         <h1>Movie Details</h1>
-        //         <ImageListItem>
-        //             <img src={currentMovie.poster} alt={currentMovie.title} />
-        //         </ImageListItem>
-        //     </CardContent>
-        //     <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        //         {currentMovie.title}
-        //         {currentMovie.description}
-
-
-        //         {genres && genres.map((genre) => {
-        //             return (
-        //                 <Genre
-        //                     key={genre}
-        //                     genre={genre}
-        //                 />
-        //             );
-        //         })}
-
-        //     </Typography>
-        //     <CardActions>
-        //         <Button size="small" onClick={handleClick}>Return to Home</Button>
-        //     </CardActions>
-        // </Card> */}
-
             <Card sx={{ maxWidth: 800 }} className="movieDetailsContainer">
                 <div className="detailsImageContainer">
                     <img src={currentMovie.poster} alt={currentMovie.title} />

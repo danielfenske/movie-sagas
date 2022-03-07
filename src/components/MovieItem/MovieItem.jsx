@@ -31,18 +31,6 @@ const MovieItem = ({ movie }) => {
 
     return (
         <>
-            {/* <Card sx={{ width: 275 }}>
-            <CardContent>
-                    <img src={movie.poster} alt={movie.title} />
-            </CardContent>
-            <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                {movie.title}
-            </Typography>
-            <CardActions>
-                <Button size="small" onClick={handleClick}>Learn More</Button>
-            </CardActions>
-        </Card> */}
-
             <Card sx={{ width: 275 }} className="movieItemContainer">
                 <div className="imageContainer">
                     <img src={movie.poster} alt={movie.title} />
