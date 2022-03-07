@@ -43,7 +43,7 @@ const MovieItem = ({ movie }) => {
             </CardActions>
         </Card> */}
 
-            <Card sx={{ width: 200 }} className="movieItemContainer">
+            <Card sx={{ width: 275 }} className="movieItemContainer">
                 <div className="imageContainer">
                     <img src={movie.poster} alt={movie.title} />
                 </div>

@@ -14,15 +14,20 @@
 
 .imageContainer img {
     width: 100%;
-    height: 260px;
+    height: 350px;
     object-fit: cover;
 }
 
 .titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+
     width: 100%;
-    height: 100px;
+    height: 125px;
     background-color: #eceff1;
-    padding: 10px;
 }
 
 .titleContainer Button, .titleContainer h1 {
@@ -30,7 +35,7 @@
 }
 
 .titleHeader {
-    font-size: 1rem;
-    color: #455a64;
+    font-size: 1.2rem;
+    color: #37474f;
 }
   

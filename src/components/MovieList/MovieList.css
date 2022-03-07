@@ -1,4 +1,21 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.listHeader {
+    text-align: left;
+    font-size: 2rem;
+    
+}
+
 .movies {
     display : flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: 15px;
 }
