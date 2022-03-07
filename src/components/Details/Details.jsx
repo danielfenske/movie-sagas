@@ -32,33 +32,35 @@ function Details() {
 
     return (
         <>
-            <Card sx={{ maxWidth: 800 }} className="movieDetailsContainer">
-                <div className="detailsImageContainer">
-                    <img src={currentMovie.poster} alt={currentMovie.title} />
-                </div>
+            <main>
+                <Card sx={{ maxWidth: 800 }} className="movieDetailsContainer">
+                    <div className="detailsImageContainer">
+                        <img src={currentMovie.poster} alt={currentMovie.title} />
+                    </div>
 
-                <div className="mainContainer">
-                    <div className="detailsContainer">
-                        <h1 className="detailsTitleHeader">{currentMovie.title}</h1>
-                        <p className="detailsDescription">{currentMovie.description}</p>
+                    <div className="mainContainer">
+                        <div className="detailsContainer">
+                            <h1 className="detailsTitleHeader">{currentMovie.title}</h1>
+                            <p className="detailsDescription">{currentMovie.description}</p>
 
-                        <div className="detailsGenresContainer">
-                            {genres && genres.map((genre) => {
-                                return (
-                                    <Genre
-                                        key={genre}
-                                        genre={genre}
-                                    />
-                                );
-                            })}
+                            <div className="detailsGenresContainer">
+                                {genres && genres.map((genre) => {
+                                    return (
+                                        <Genre
+                                            key={genre}
+                                            genre={genre}
+                                        />
+                                    );
+                                })}
+                            </div>
+                        </div>
+
+                        <div className="actionContainer">
+                            <Button size="small" variant="contained" onClick={handleClick}><HomeIcon /></Button>
                         </div>
                     </div>
-
-                    <div className="actionContainer">
-                        <Button size="small" variant="contained" onClick={handleClick}><HomeIcon /></Button>
-                    </div>
-                </div>
-            </Card>
+                </Card>
+            </main>
         </>
     )
 }
